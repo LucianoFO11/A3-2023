@@ -1,0 +1,57 @@
+10 - Exercício: Soma de Matrizes
+Crie um programa que solicite ao usuário que informe o tamanho
+de duas matrizes quadradas (mesmo número de linhas e colunas)
+e preencha-as com valores inteiros. O programa deve calcular a
+soma das duas matrizes e exibir a matriz resultante.
+
+
+
+import java.util.Scanner;
+public class Andre10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+System.out.print("Informe o tamanho das matrizes (n x n): ");
+int tamanho = scanner.nextInt();
+ int[][] matriz1 = new int[tamanho][tamanho];
+  int[][] matriz2 = new int[tamanho][tamanho];
+    int[][] matrizSoma = new int[tamanho][tamanho];
+    
+ System.out.println("Preencha a primeira matriz:");
+    preencherMatriz(scanner, matriz1);
+
+       System.out.println("Preencha a segunda matriz:");
+        preencherMatriz(scanner, matriz2);
+
+        somarMatrizes(matriz1, matriz2, matrizSoma);
+
+        System.out.println("Matriz resultante:");
+        imprimirMatriz(matrizSoma);
+    }
+
+    public static void preencherMatriz(Scanner scanner, int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+        System.out.print("Informe o valor para a posição (" + i + ", " + j + "): ");
+          matriz[i][j] = scanner.nextInt();
+            }
+        }
+    }
+
+    public static void somarMatrizes(int[][] matriz1, int[][] matriz2, int[][] matrizSoma) {
+        for (int i = 0; i < matriz1.length; i++) {
+            for (int j = 0; j < matriz1[i].length; j++) {
+                matrizSoma[i][j] = matriz1[i][j] + matriz2[i][j];
+            }
+        }
+    }
+
+    public static void imprimirMatriz(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
