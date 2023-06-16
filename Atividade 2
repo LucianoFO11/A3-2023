@@ -1,0 +1,100 @@
+2 - Cálculo de área
+Uma parede em formato retangular, cuja altura é hp (altura da
+parede) e a largura lp (largura da parede) precisa ser coberta por
+azulejos também retangulares. O azulejo retangular tem dimensões
+ha (altura do azulejo) e la (largura do azulejo). Escreva um
+programa que leia as quatro medidas hp, lp, ha e la, calcule e
+imprima quanto azulejos com as medidas dadas são necessários
+para cobrir a parede dada.
+
+
+package a3_2;
+import java.util.Scanner;
+public class A3_2 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        float hp,lp,ha,la, ap, aa, total;
+        System.out.println("Bem vindo/a ao programa!");
+        System.out.println("Digite o valor da altura da parede.");
+        hp = teclado.nextFloat();
+         System.out.println("Digite o valor da largura da parede.");
+        lp = teclado.nextFloat();
+         System.out.println("Digite o valor da altura do azulejo.");
+        ha = teclado.nextFloat();
+         System.out.println("Digite o valor da largura do azulejo.");
+        la = teclado.nextFloat();
+        ap = hp * lp;
+        aa = hp * la;
+
+        total = ap / aa;
+
+        System.out.println("Cabem "+total+"azulejos na parede");
+    }
+
+}
+/*
+A3_3
+ */
+
+package a3_3;
+import java.util.Scanner;
+public class A3_3 {
+    public static void main(String[] args) {
+    Scanner teclado = new Scanner(System.in);
+    int i = 0, total = 0;
+    int notas[] = new int[i];
+
+
+        System.out.println("Olá! Digite suas 5 notas.Comece pela primeira.");
+        for (i = 0; i < 5; i++){
+            notas[i] = teclado.nextInt();
+            i++;
+        }
+        for (i = 0; i <5; i++){
+            total = notas[i]+total;
+        }
+    if (total >= 60){
+        System.out.println("Você foi aprovado! Parabéns!");
+    }
+    else if(total >= 40 && total <= 59){
+        System.out.println("Você foi reprovado. Procure a direção de sua escola.");
+    }
+    else if(total < 40){ 
+        System.out.println("Você ficou de recuperação. Procure a direção de sua escola.");
+    }
+    }
+}
+/*
+A3_5
+ */
+
+
+package a3_5;
+import java.util.Scanner;
+import java.util.Random;
+public class A3_5 {
+    public static void main(String[] args) {
+        Random aleatorio = new Random();
+
+        Scanner teclado = new Scanner(System.in);
+        int numeros[] = new int[100];
+        int i, par = 0, impar = 0, soma = 0;
+
+        for (i=0; i< 100; i++){
+            numeros[i] = aleatorio.nextInt(1000);
+            System.out.println(numeros[i]);
+
+            if (numeros[i]%2 == 0){
+            par++;
+            }
+            else if (numeros[i]%2 != 0){
+            impar++;
+            }
+            soma = numeros[i]+ soma;
+        } 
+        System.out.println("Existem " + par + "numeros pares");
+        System.out.println("Existem " + impar + "numeros impares");
+        System.out.println("A soma de todos os números é "+soma);
+    }
+
+}
