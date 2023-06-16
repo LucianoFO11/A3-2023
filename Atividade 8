@@ -1,0 +1,33 @@
+8 - Contador de Números Pares e Ímpares
+Desenvolva um programa que solicite ao usuário que digite uma
+sequência de números inteiros positivos. O programa deve contar
+quantos números pares e quantos números ímpares foram
+digitados, e exibir o resultado.
+
+
+import java.util.Scanner;
+
+public class ContadorNumerosParesImpares {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int numerosPares = 0;
+        int numerosImpares = 0;
+
+        System.out.print("Digite uma sequência de números inteiros positivos (digite 0 para sair): ");
+        int numero = scanner.nextInt();
+
+        while (numero != 0) {
+            if (numero % 2 == 0) {
+                numerosPares++;
+            } else {
+                numerosImpares++;
+            }
+
+            numero = scanner.nextInt();
+        }
+
+        System.out.println("Quantidade de números pares: " + numerosPares);
+        System.out.println("Quantidade de números ímpares: " + numerosImpares);
+    }
+}
