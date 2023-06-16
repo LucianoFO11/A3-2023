@@ -1,0 +1,48 @@
+6 - Conversor de Temperatura
+Crie um programa que permita ao usuário converter uma
+temperatura em Celsius para Fahrenheit ou vice-versa. O usuário
+deve escolher a opção desejada e informar a temperatura.
+
+
+
+package a3_6;
+import java.util.Scanner;
+public class A3_6 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner (System.in);
+        double temIn, temFi, escolha,sescolha;
+
+        System.out.println("Bem vindo/a ao conversor de temperatura!");
+        System.out.println("Para começar, escolha que tipo de conversão deseja.");
+        System.out.println("Para converter de Celsius para fahrenheit, digite 1");
+        System.out.println("Para converter de Fahrenheit para celsius, digite 2");
+        escolha = teclado.nextInt();
+
+        if (escolha == 1){
+            System.out.println("Digte a temperatura em Celsius sem º.");
+            temIn = teclado.nextFloat();
+            temFi = (temIn1.8)+32;
+            System.out.println(temIn +" em celsius corresponde a "+temFi+" em Fahrenheit");
+        }
+        else if(escolha ==2){
+            System.out.println("Digte a temperatura em Fahrenheit sem º.");
+            temIn = teclado.nextFloat();
+            temFi = (temIn - 32) * 5/9;
+            System.out.println(temIn +" em Fahrenheit corresponde a "+temFi+" em Celsius");
+        }
+        else {
+            System.out.println("Informe um valor válido.");
+            main(args);
+        }
+        System.out.println("Deseja continuar usando o programa? Digite 1 para continuar e 2 para finalizar.");
+        sescolha = teclado.nextInt();
+
+        if(sescolha == 1) {
+            main(args);
+        }
+        else{
+
+        }
+    }
+
+}
